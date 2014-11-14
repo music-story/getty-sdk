@@ -11,6 +11,9 @@ namespace GettyImages\Connect\Request\Search {
     require_once("SearchImages.php");
     require_once("SearchImagesCreative.php");
     require_once("SearchImagesEditorial.php");
+    require_once("SearchVideos.php");
+    require_once("SearchVideosCreative.php");
+    require_once("SearchVideosEditorial.php");
 
     use GettyImages\Connect\Request\FluentRequest;
     use GettyImages\Connect\Request\WebHelper;
@@ -36,6 +39,16 @@ namespace GettyImages\Connect\Request\Search {
          */
         public function Images() {
             $newSearchObject = new SearchImages($this->credentials,$this->endpointUri, $this->requestDetails);
+            return $newSearchObject;
+        }
+        
+         /**
+         * Creates a search configured for Videos.
+         *
+         * @return SearchVideos SearchVideos object;
+         */
+        public function Videos() {
+            $newSearchObject = new SearchVideos($this->credentials,$this->endpointUri, $this->requestDetails);
             return $newSearchObject;
         }
 

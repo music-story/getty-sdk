@@ -1,5 +1,5 @@
 {
-    "name": "gettyimages/gettyimages-api",
+    "name": "musicstory/getty-sdk",
     "description": "Getty Images API SDK - PHP",
     "minimum-stability": "stable",
     "license": "MIT",

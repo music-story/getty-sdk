@@ -24,6 +24,11 @@ namespace GettyImages\Api\Request\Download  {
             $this->requestDetails["id"] = $assetId;
             return $this;
         }
+        
+        public function withProductId($productId){
+            $this->requestDetails["product_id"] = $productId;
+            return $this;
+        }
 
         public function withHeight($height) {
             $this->requestDetails["height"] = $height;
@@ -36,7 +41,6 @@ namespace GettyImages\Api\Request\Download  {
         }
 
         public function execute() {
-
             $assetId = $this->requestDetails["id"];
             unset($this->requestDetails["id"]);
 
@@ -69,9 +73,7 @@ namespace GettyImages\Api\Request\Download  {
                 return $response['body'];
             }
                 
-
             return $response;
         }
     }
-
 }
